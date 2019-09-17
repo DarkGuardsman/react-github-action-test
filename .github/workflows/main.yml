@@ -26,4 +26,4 @@ jobs:
       uses: nchaulet/github-action-gh-pages@master
       with:
         args:
-          GITHUB_TOKEN:${{ GITHUB_TOKEN }}
+          GITHUB_TOKEN:${{ secrets.GITHUB_TOKEN }}
