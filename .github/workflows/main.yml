@@ -1,29 +1,17 @@
-name: github pages
-
-on:
-  push:
-    branches:
-    - master
-
+name: Build and Deploy
+on: [push]
 jobs:
-  build-deploy:
-    runs-on: ubuntu-18.04
+  build-and-deploy:
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
+    - name: Checkout
+      uses: actions/checkout@master
 
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        version: 12
-
-    - name: Install Modules
-      run: npm install
-
-    - name: Build Site
-      run: npm build
-
-    - name: Deploy
-      uses: nchaulet/github-action-gh-pages@master
-      with:
-        args:
-          GITHUB_TOKEN:${{ secrets.GITHUB_TOKEN }}
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: master # The branch the action should deploy from.
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: build # The folder the action should deploy.
+        BUILD_SCRIPT: npm install && npm run-script build # The build script the action should run prior to deploying.
