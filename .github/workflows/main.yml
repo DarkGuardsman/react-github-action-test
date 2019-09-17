@@ -1,26 +1,28 @@
-workflow "Build and deploy" {
-  on = "push"
-  resolves = ["Deploy"]
-}
+name: github pages
 
-action "Install" {
-  uses = "actions/npm@e7aaefe"
-  args = "install"
-}
+on:
+  push:
+    branches:
+    - master
 
-action "Build" {
-  uses = "actions/npm@e7aaefe"
-  args = "run build"
-  needs = ["Install"]
-}
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@master
 
-action "Deploy" {
-  uses = "nchaulet/github-action-gh-pages@master"
-  secrets = [
-    "GITHUB_TOKEN",
-  ]
-  needs = ["Build"]
-  env = {
-    PUBLIC_PATH = "build"
-  }
-}
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        version: 12
+
+    - name: Install Modules
+      run: npm install
+
+    - name: Build Site
+      run: npm build
+
+    - name: Deploy
+      uses: nchaulet/github-action-gh-pages@master
+      using:
+        GITHUB_TOKEN=${{GITHUB_TOKEN}}
