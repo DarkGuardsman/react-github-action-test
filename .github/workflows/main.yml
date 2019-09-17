@@ -24,3 +24,5 @@ jobs:
 
     - name: Deploy
       uses: nchaulet/github-action-gh-pages@master
+      args:
+        GITHUB_TOKEN=${{GITHUB_TOKEN}}
