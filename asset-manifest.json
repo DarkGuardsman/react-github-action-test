@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-github-action-test/static/css/main.2cce8147.chunk.css",
+    "main.js": "/react-github-action-test/static/js/main.6eeff8ec.chunk.js",
+    "main.js.map": "/react-github-action-test/static/js/main.6eeff8ec.chunk.js.map",
+    "runtime~main.js": "/react-github-action-test/static/js/runtime~main.998b60f9.js",
+    "runtime~main.js.map": "/react-github-action-test/static/js/runtime~main.998b60f9.js.map",
+    "static/js/2.87a34895.chunk.js": "/react-github-action-test/static/js/2.87a34895.chunk.js",
+    "static/js/2.87a34895.chunk.js.map": "/react-github-action-test/static/js/2.87a34895.chunk.js.map",
+    "index.html": "/react-github-action-test/index.html",
+    "precache-manifest.638714213335fe63e62d965a78406eea.js": "/react-github-action-test/precache-manifest.638714213335fe63e62d965a78406eea.js",
+    "service-worker.js": "/react-github-action-test/service-worker.js",
+    "static/css/main.2cce8147.chunk.css.map": "/react-github-action-test/static/css/main.2cce8147.chunk.css.map",
+    "static/media/logo.svg": "/react-github-action-test/static/media/logo.5d5d9eef.svg"
+  }
+}
